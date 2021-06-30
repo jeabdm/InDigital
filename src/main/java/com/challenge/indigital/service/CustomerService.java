@@ -1,5 +1,6 @@
 package com.challenge.indigital.service;
 
+import com.challenge.indigital.dto.CustomerDTO;
 import com.challenge.indigital.exception.BadRequestException;
 import com.challenge.indigital.model.Customer;
 import com.challenge.indigital.repository.CustomerRepository;
@@ -23,4 +24,8 @@ public class CustomerService extends BaseService{
         log.info("hola mundo");
         throw new BadRequestException("SERV","hola");
     }
+
+//    public void createCustomer(CustomerDTO customer){
+//        this.customerRepository.save(customer)
+//    }
 }

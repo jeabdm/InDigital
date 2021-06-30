@@ -1,11 +1,17 @@
 package com.challenge.indigital.controller;
 
+import com.challenge.indigital.dto.CustomerDTO;
+import com.challenge.indigital.model.Customer;
 import com.challenge.indigital.service.CustomerService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 public class CustomerController extends BaseController{
@@ -22,5 +28,12 @@ public class CustomerController extends BaseController{
         this.customerService.serviceTest();
         return ResponseEntity.ok()
                 .build();
+    }
+
+    @PostMapping("/creacliente")
+    public ResponseEntity<Customer> createCustomer(@RequestBody @Valid CustomerDTO request){
+        Customer customer = request.toEntity();
+        log.info(customer.toString());
+        return ResponseEntity.ok(customer);
     }
 }
