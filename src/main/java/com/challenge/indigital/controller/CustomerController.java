@@ -32,8 +32,7 @@ public class CustomerController extends BaseController{
 
     @PostMapping("/creacliente")
     public ResponseEntity<Customer> createCustomer(@RequestBody @Valid CustomerDTO request){
-        Customer customer = request.toEntity();
-        log.info(customer.toString());
-        return ResponseEntity.ok(customer);
+        log.info("Request: /creacliente, body: {}", request.toString());
+        return ResponseEntity.ok(this.customerService.createCustomer(request.toEntity()));
     }
 }

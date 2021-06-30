@@ -25,7 +25,7 @@ public class CustomerService extends BaseService{
         throw new BadRequestException("SERV","hola");
     }
 
-//    public void createCustomer(CustomerDTO customer){
-//        this.customerRepository.save(customer)
-//    }
+    public Customer createCustomer(Customer customer){
+        return this.customerRepository.save(customer);
+    }
 }
