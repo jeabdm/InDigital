@@ -1,5 +1,6 @@
 package com.challenge.indigital.model;
 
+import com.challenge.indigital.utils.Constant;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,4 +21,8 @@ public class Customer {
     private int age;
 
     private LocalDate dateOfBirth;
+
+    public LocalDate getDateOfDeath(){
+        return dateOfBirth.plusYears(Constant.AVERAGE_LIFE);
+    }
 }
