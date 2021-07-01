@@ -35,8 +35,8 @@ public class CustomerService extends BaseService{
     }
 
     public Statistic calculateStatisticCustomer(){
-        List<Integer> customers = this.customerRepository.findAll().stream().map(Customer::getAge).collect(Collectors.toList());
-        return MathCustomUtil.getStandardDeviation(customers, 5);
+        List<Integer> customerAges = this.customerRepository.findAll().stream().map(Customer::getAge).collect(Collectors.toList());
+        return MathCustomUtil.getStandardDeviation(customerAges, 5);
     }
 
     public List<Customer> getCustomers(){
