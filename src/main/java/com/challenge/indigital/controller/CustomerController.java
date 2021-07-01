@@ -39,7 +39,8 @@ public class CustomerController extends BaseController{
     }
 
     @GetMapping("/kpideclientes")
-    @ApiOperation(value = "Get the average and standard deviation", notes = "If exist 1 or less customer, the api will return 0 as average and standard deviation")
+    @ApiOperation(value = "Get the average and standard deviation(with 5 decimals)",
+            notes = "If exist 1 or less customer, the api will return 0 as average and standard deviation")
     public ResponseEntity<Statistic> getStatistic() {
         log.info("GET: /kpideclientes");
         return ResponseEntity.ok(customerService.calculateStatisticCustomer());

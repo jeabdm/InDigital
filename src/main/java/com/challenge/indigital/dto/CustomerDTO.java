@@ -35,7 +35,6 @@ public class CustomerDTO {
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @NotNull(message = "Date of birth is required")
-    @NotBlank
     @ApiModelProperty(notes = "Date of birth of customer",name="dateOfBirth",required=true, value = "standard Iso: yyyy-mm-dd")
     private LocalDate dateOfBirth;
 

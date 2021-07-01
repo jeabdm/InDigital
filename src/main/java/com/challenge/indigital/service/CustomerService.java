@@ -1,10 +1,10 @@
 package com.challenge.indigital.service;
 
-import com.challenge.indigital.dto.CustomerDTO;
 import com.challenge.indigital.dto.Statistic;
 import com.challenge.indigital.exception.BadRequestException;
 import com.challenge.indigital.model.Customer;
 import com.challenge.indigital.repository.CustomerRepository;
+import com.challenge.indigital.utils.Constant;
 import com.challenge.indigital.utils.MathCustomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,9 +23,6 @@ public class CustomerService extends BaseService{
     }
 
     public void serviceTest(){
-        Customer customer = new Customer();
-        customer.setName("Juana");
-        this.customerRepository.save(customer);
         log.info("hola mundo");
         throw new BadRequestException("SERV","hola");
     }
@@ -36,7 +33,7 @@ public class CustomerService extends BaseService{
 
     public Statistic calculateStatisticCustomer(){
         List<Integer> customerAges = this.customerRepository.findAll().stream().map(Customer::getAge).collect(Collectors.toList());
-        return MathCustomUtil.getStandardDeviation(customerAges, 5);
+        return MathCustomUtil.getStandardDeviation(customerAges, Constant.NUMBER_DECIMALS);
     }
 
     public List<Customer> getCustomers(){

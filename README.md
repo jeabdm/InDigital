@@ -1,6 +1,6 @@
 # Indigital
 
-_Servicio que expone 3 endpoints. Uno para dar de alta a un cliente, otro para consultar el promedio de edad y la desviación estándar entre las edades de todos los clientes, y el último lista todos los clientes con todos sus datos mas la fecha probable de muerte._
+_Servicio que expone 3 endpoints. Alta de un cliente, consultar el promedio de edad y la desviación estándar de las edades, y el lista todos los clientes con todos sus datos mas la fecha probable de muerte._
 
 ## Comenzando 🚀
 
@@ -43,22 +43,8 @@ _La plataforma cloud en donde estará desplegada la aplicacion es: [Heroku](http
 + Para poder realizar el despliegue deberá tener acceso al proyecto heroku: [jeabdm](https://dashboard.heroku.com/apps/jblas)
 + Dentro de la pestaña _Deploy_, elegir la opción _Deployment method_ **GitHub**
 + Conectar el proyecto heroku al reposiorio github
-
-![deployTag](./docs/images/deployTag.png)
-
-+ En _Manual deploy_ eligir el branch, con el codigo fuente a desplegar. Y hacer click en el boton **Deploy Branch**
-
-![deployButton](./docs/images/deployButton.png)
-
-### Pruebas con Insomnia REST
-_Insomnia es un cliente REST, con el cual se podran realizar pruebas a la API desplegada_
-+ Descargarse la herramienta desde https://insomnia.rest/download
-+ Instalarla e importar el archivo json [Insomnia_Indigital.json](./docs/Insomnia_Indigital.json)
-+ Ir a Preferences -> Data -> Import Data
-
-![insomnia](./docs/images/insomnia.png)
-
-+ Desde esta herramienta podrá probar la aplicación, eligiendo entre el ambiente **local** y el ambiente **heroku-prod**
++ Para saber el estado de salud de la aplicación, ir a: https://jblas.herokuapp.com/
++ Para probar la aplicación desplegada, ir a: https://jblas.herokuapp.com//swagger-ui.html#
 
 ## Autor ✒️
 

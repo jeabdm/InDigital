@@ -31,7 +31,8 @@ public class MathCustomUtil {
         Double standardDeviation = Math.sqrt(sumOfSquares / (stats.getCount() - 1));
 
         if(numberOfDecimals > 0)
-            return new Statistic(stats.getAverage(), MathCustomUtil.round(standardDeviation, numberOfDecimals));
+            return new Statistic(MathCustomUtil.round(stats.getAverage(),numberOfDecimals),
+                    MathCustomUtil.round(standardDeviation, numberOfDecimals));
         else
             return new Statistic(stats.getAverage(), standardDeviation);
     }
